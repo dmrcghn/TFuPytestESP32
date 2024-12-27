@@ -52,7 +52,8 @@ jobs:
         run: |
           source ./micropython/tools/ci.sh
           cd ./micropython
-          git cherry-pick 3974be7fec1ea6c529ecbee795c0152b42b61d55
+          wget https://github.com/espressif/esp-idf/commit/3974be7fec1ea6c529ecbee795c0152b42b61d55.patch
+          git apply 3974be7fec1ea6c529ecbee795c0152b42b61d55.patch
           cd ..
           ci_esp32_idf44_setup
       - name: Cache tflm
