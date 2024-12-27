@@ -81,6 +81,8 @@ jobs:
         run:  |
           source ./esp-idf/export.sh
           cd ./micropython
+          git config --global user.name "ar"
+          git config --global user.email "nothanks@example.com"
           git cherry-pick 32572439984e5640c6af46fbe7c27400c30112ce
           git cherry-pick f1c6cb7725960487195daa5c5c196fd8d3563811
           echo "make -C mpy-cross V=1 clean all"
